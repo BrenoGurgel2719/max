@@ -2,13 +2,25 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maximiliano Fernandes Advocacia — Defesa Criminal</title>
 <meta name="description" content="Defesa digna com uma pena justa e equilibrada. Advocacia criminal com atuação em todo o território nacional.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Roboto+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta name="theme-color" content="#16140F">
+<link rel="icon" type="image/png" href="imagens/logo-navbar.png">
+<link rel="apple-touch-icon" href="imagens/logo-navbar.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brenogurgel2719.github.io/max/">
+<meta property="og:site_name" content="Maximiliano Fernandes Advocacia">
+<meta property="og:title" content="Maximiliano Fernandes Advocacia — Defesa Criminal">
+<meta property="og:description" content="Defesa digna com uma pena justa e equilibrada. Advocacia criminal com atuação em todo o território nacional.">
+<meta property="og:image" content="https://brenogurgel2719.github.io/max/imagens/img-hero.png">
+<meta property="og:image:alt" content="Maximiliano Fernandes Advocacia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maximiliano Fernandes Advocacia — Defesa Criminal">
+<meta name="twitter:description" content="Defesa digna com uma pena justa e equilibrada. Advocacia criminal com atuação em todo o território nacional.">
+<meta name="twitter:image" content="https://brenogurgel2719.github.io/max/imagens/img-hero.png">
+<link rel="canonical" href="https://brenogurgel2719.github.io/max/">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +31,7 @@
 <header class="navbar" id="navbar">
   <div class="navbar__inner">
     <a href="#topo" class="navbar__brand">
-      <img src="imagens/logo-navbar.png" alt="Maximiliano Fernandes Advocacia" class="navbar__logo">
+      <img src="imagens/logo-navbar.png" alt="Maximiliano Fernandes Advocacia" class="navbar__logo" width="85" height="57">
     </a>
 
     <nav class="navbar__nav" id="navMenu">
@@ -44,7 +56,7 @@
   <!-- HERO -->
   <section class="hero" id="topo">
     <div class="hero__media" aria-hidden="true">
-      <img src="imagens/img-hero.avif" alt="" class="hero__image">
+      <img src="imagens/img-hero.avif" alt="" class="hero__image" fetchpriority="high" decoding="async">
       <div class="hero__overlay"></div>
       <div class="hero__grain"></div>
     </div>
@@ -82,7 +94,7 @@
   <section class="sobre reveal-section" id="sobre">
     <div class="sobre__inner">
       <figure class="sobre__figure reveal">
-        <img src="imagens/img-sobre.avif" alt="Maximiliano Fernandes, advogado criminalista" class="sobre__image">
+        <img src="imagens/img-sobre.avif" alt="Maximiliano Fernandes, advogado criminalista" class="sobre__image" loading="lazy" decoding="async">
       </figure>
 
       <div class="sobre__content reveal">
@@ -180,7 +192,7 @@
       <button class="carousel-prev" type="button" aria-label="Anterior">‹</button>
       <button class="carousel-next" type="button" aria-label="Próximo">›</button>
 
-      <div class="carousel-pagination" id="carouselPagination"></div>
+      <div class="carousel-pagination" id="carouselPagination" role="group" aria-label="Navegação das áreas de atuação"></div>
     </section>
   </section>
 
@@ -229,7 +241,7 @@
 <footer class="footer reveal-section">
   <div class="footer__inner reveal-item">
     <div class="footer__brand">
-      <img src="imagens/logo-navbar.png" alt="Maximiliano Fernandes Advocacia" class="footer__logo">
+      <img src="imagens/logo-navbar.png" alt="Maximiliano Fernandes Advocacia" class="footer__logo" width="85" height="57">
       <p class="footer__tagline">Defesa digna com uma pena justa e equilibrada.</p>
       <div class="footer__social">
         <a href="https://www.facebook.com/maximiliano.fernandes.5891" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
@@ -262,7 +274,7 @@
 
 <!-- WHATSAPP FLUTUANTE -->
 <a href="https://web.whatsapp.com/send?phone=5584991356463" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Conversar no WhatsApp">
-  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  <span aria-hidden="true">WA</span>
 </a>
 
 <script src="script.js"></script>

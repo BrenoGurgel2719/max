@@ -11,22 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* --------------------- 1. Navbar --------------------- */
   const navbar = document.getElementById("navbar");
-  const onScrollNav = () => {
-    navbar.classList.toggle("is-scrolled", window.scrollY > 12);
-  };
-  onScrollNav();
-  window.addEventListener("scroll", onScrollNav, { passive: true });
-
-  /* Parallax muito sutil no hero, limitado para preservar a leitura. */
   const hero = document.querySelector(".hero");
   const heroImagem = document.querySelector(".hero__image");
-  const atualizarParallax = () => {
-    if (!hero || !heroImagem || reduzirMovimento) return;
-    const progresso = Math.min(Math.max(window.scrollY / hero.offsetHeight, 0), 1);
+  let alturaDoHero = hero ? hero.offsetHeight : 1;
+  let quadroDeScroll = 0;
+
+  const atualizarScroll = () => {
+    quadroDeScroll = 0;
+    navbar.classList.toggle("is-scrolled", window.scrollY > 12);
+    if (!heroImagem || reduzirMovimento) return;
+    const progresso = Math.min(Math.max(window.scrollY / alturaDoHero, 0), 1);
     heroImagem.style.setProperty("--hero-shift", `${progresso * 36}px`);
   };
-  atualizarParallax();
-  window.addEventListener("scroll", atualizarParallax, { passive: true });
+  const agendarScroll = () => {
+    if (!quadroDeScroll) quadroDeScroll = requestAnimationFrame(atualizarScroll);
+  };
+  atualizarScroll();
+  window.addEventListener("scroll", agendarScroll, { passive: true });
 
   /* --------------------- 2. Menu mobile --------------------- */
   const burger = document.getElementById("navBurger");
@@ -146,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function atualizarPaginacao() {
     const pontos = paginacao.querySelectorAll("button");
     pontos.forEach((ponto, indice) => {
-      ponto.setAttribute("aria-selected", String(indice === indiceAtivo));
+      ponto.setAttribute("aria-current", String(indice === indiceAtivo));
     });
   }
 
@@ -253,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Inicialização */
   window.addEventListener("resize", () => {
+    alturaDoHero = hero ? hero.offsetHeight : 1;
     medir();
     renderizar();
   });
