@@ -853,6 +853,12 @@ a { color: inherit; text-decoration: none; }
 /* ============================== RESPONSIVO ============================== */
 
 @media (max-width: 860px) {
+  .hero__image {
+    object-position: center center;
+    transform: translate3d(0, 0, 0) scale(1);
+    will-change: auto;
+  }
+
   .navbar__nav { display: none; }
   .navbar__burger { display: flex; }
 
